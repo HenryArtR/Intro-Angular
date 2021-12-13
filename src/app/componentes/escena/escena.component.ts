@@ -10,6 +10,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class EscenaComponent implements OnInit {
 
   @Input() frasesHome: string =""
+  currentSentence = ""
+
+  prev(){
+    
+  }
+  next(){
+
+  }
 
   constructor() { }
 

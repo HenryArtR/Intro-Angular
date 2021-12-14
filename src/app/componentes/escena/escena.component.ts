@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 
 @Component({
@@ -9,14 +9,16 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class EscenaComponent implements OnInit {
 
-  @Input() frasesHome: string =""
-  currentSentence = ""
-
+  @Input() frasesHome: string[] = []
+  currentSentence: string = ""
+  i = 0
   prev(){
-    
+    this.i--
+    this.currentSentence = this.frasesHome[this.i];
   }
   next(){
-
+    this.i++
+    this.currentSentence = this.frasesHome[this.i]
   }
 
   constructor() { }

@@ -10,8 +10,18 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col rounded-pill border border-2 border-dark m-2">
-                <p class="d-flex justify-content-center m-2">{{frasesHome}}</p>
+            <div class="d-grid gap-2 col-6">
+                <button (click)="prev()">Anterior</button>
+            </div>
+            <div class="d-grid gap-2 col-6">
+                <button (click)="next()">Siguiente</button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div *ngFor="let frase of frasesHome"  class="row">
+            <div class="col rounded-pill border border-2 border-dark m-2" [ngClass]= "currentSentence == frase ? 'colorbg':''" >
+                <p class="d-flex justify-content-center m-2" >{{frase}}</p>
             </div>
         </div>
     </div>

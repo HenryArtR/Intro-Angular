@@ -10,15 +10,21 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 export class EscenaComponent implements OnInit {
 
   @Input() frasesHome: string[] = []
-  currentSentence: string = ""
-  i = 0
+  currentSentence: string = this.frasesHome[0]
+  i = 0 
   prev(){
-    this.i--
-    this.currentSentence = this.frasesHome[this.i];
+    if(this.i > 0){
+      this.i--
+      this.currentSentence = this.frasesHome[this.i];
+    }
+    
   }
   next(){
-    this.i++
-    this.currentSentence = this.frasesHome[this.i]
+    if(this.i < this.frasesHome.length){
+      this.i++
+      this.currentSentence = this.frasesHome[this.i]
+    }
+    
   }
 
   constructor() { }

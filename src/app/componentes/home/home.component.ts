@@ -20,9 +20,6 @@ export class HomeComponent implements OnInit {
   
   ]
 
-  anterior(){}
-  siguiente(){}
-
   constructor() { }
 
   ngOnInit(): void {

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
+import { Frase } from 'src/app/interfases/escena.interfase';
 
 
 @Component({
@@ -9,26 +10,29 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 
 export class EscenaComponent implements OnInit {
 
-  @Input() frasesHome: string[] = []
+  @Input() frasesHome: Frase[] = []
   currentSentence: string = ""
+  backg: string = ""
   i = 0 
   
   prev(){   
     if(this.i > 0){
       this.i--
     }
-    this.currentSentence = this.frasesHome[this.i];
+    this.currentSentence = this.frasesHome[this.i].txt;
+    this.backg = this.frasesHome[this.i].img;
   }
   next(){
     if(this.i < this.frasesHome.length -1){
       this.i++
     }
-    this.currentSentence = this.frasesHome[this.i]; 
+    this.currentSentence = this.frasesHome[this.i].txt;
+    this.backg = this.frasesHome[this.i].img;
   }
-  constructor() { }
 
   ngOnInit(): void {
-    this.currentSentence = this.frasesHome[0]
+    this.currentSentence = this.frasesHome[0].txt
+    this.backg = this.frasesHome[0].img
   }
 
 }

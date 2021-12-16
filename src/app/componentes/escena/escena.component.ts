@@ -11,7 +11,6 @@ export class EscenaComponent implements OnInit {
 
   @Input() frasesHome: string[] = []
   currentSentence: string = ""
-  
   i = 0 
   
   prev(){   
@@ -26,7 +25,6 @@ export class EscenaComponent implements OnInit {
     }
     this.currentSentence = this.frasesHome[this.i]; 
   }
-
   constructor() { }
 
   ngOnInit(): void {
